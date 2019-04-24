@@ -88,7 +88,7 @@ class UserController extends AbstractFOSRestController
 
         $form = $this->createForm(UserType::class, $user, ['method' => 'PATCH']);
         $data = json_decode($request->getContent(), true);
-        dump($data);
+
         $form->submit($data, false);
 
         if ($form->isSubmitted() && $form->isValid()) {
